@@ -22,7 +22,7 @@ namespace prace_s_prvky
 
         public void zobrazit(String text)
         {
-            textBox.Text = $"Pole: {text} + {Environment.NewLine}" + text;
+            textBox.Text = $"Pole: {text} {Environment.NewLine}";
                             
         }
 
