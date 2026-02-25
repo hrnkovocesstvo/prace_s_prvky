@@ -38,10 +38,11 @@
             // numericPocet
             // 
             this.numericPocet.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(238)));
-            this.numericPocet.Location = new System.Drawing.Point(583, 127);
+            this.numericPocet.Location = new System.Drawing.Point(575, 77);
             this.numericPocet.Name = "numericPocet";
             this.numericPocet.Size = new System.Drawing.Size(120, 30);
             this.numericPocet.TabIndex = 0;
+            this.numericPocet.ValueChanged += new System.EventHandler(this.numericPocet_ValueChanged);
             // 
             // label1
             // 
@@ -67,11 +68,12 @@
             // textBox
             // 
             this.textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox.Location = new System.Drawing.Point(46, 70);
+            this.textBox.Location = new System.Drawing.Point(31, 39);
             this.textBox.Multiline = true;
             this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(452, 265);
+            this.textBox.Size = new System.Drawing.Size(462, 377);
             this.textBox.TabIndex = 3;
+            this.textBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // Form1
             // 
