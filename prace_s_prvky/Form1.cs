@@ -21,11 +21,25 @@ namespace prace_s_prvky
         List<int> ciselnarada = new List<int>();
         List<int> radatemp;
 
-        public void zobrazit(String pole, String min, String max, String min2, String max2)
+        public void zobrazit(String pole, String min, String max, String min2, String max2, String soucet, String prumer)
         {
             textBox.Text = String.Empty;
-            textBox.Text = $"Pole: {pole} {Environment.NewLine}Max: {max} {Environment.NewLine}Min: {min}{Environment.NewLine}Max2: {max2} {Environment.NewLine}Min2: {min2}";
+            textBox.Text = $"Pole: {pole} {Environment.NewLine}Max: {max} {Environment.NewLine}Min: {min}{Environment.NewLine}Max2: {max2} {Environment.NewLine}Min2: {min2} {Environment.NewLine}Součet: {soucet} {Environment.NewLine}Průměr: {prumer}";
                             
+        }
+
+        public void hledat(String indexhledanehocisla)
+        {
+            var lines = textBox.Text
+                .Split(new[] { "\r\n", "\n" }, StringSplitOptions.None)
+                .ToList();
+
+            if (lines.Count >= 8)
+                lines.RemoveAt(7);
+
+            lines.Add($"Index hledaného čísla {indexhledanehocisla}");
+
+            textBox.Text = string.Join(Environment.NewLine, lines);
         }
 
         private void buttonDoit_Click(object sender, EventArgs e)
@@ -42,6 +56,8 @@ namespace prace_s_prvky
 
             string outtoutmin2 = "list je moc kratky";
             string outtoutmax2 = "list je moc kratky";
+
+            int soucet = 0;
 
             radatemp = ciselnarada;
             radatemp.Sort();
@@ -63,7 +79,17 @@ namespace prace_s_prvky
 
             }
             toout = toout.Substring(0, toout.Length - 2);
-            zobrazit(toout, outtoutmin, outtoutmax, outtoutmin2, outtoutmax2);
+
+            for (int i = 0; i < ciselnarada.Count; i++)
+            {
+                soucet += ciselnarada[i];
+            }
+            string soucetout = Convert.ToString(soucet);
+
+            
+            string prumerout = Convert.ToString(Math.Round(Convert.ToDecimal(soucet)/Convert.ToDecimal(ciselnarada.Count), 3));
+
+            zobrazit(toout, outtoutmin, outtoutmax, outtoutmin2, outtoutmax2, soucetout, prumerout);
         }
 
         private void textBox_TextChanged(object sender, EventArgs e)
@@ -74,6 +100,16 @@ namespace prace_s_prvky
         private void numericPocet_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            String hledanyindexout = "";
+            int hledanyindex = ciselnarada.IndexOf(Convert.ToInt32(numericHledaneCislo.Value));
+            if (hledanyindex == -1) hledanyindexout = "mimo index";
+            else hledanyindexout = Convert.ToString(hledanyindex);
+            hledat(hledanyindexout);
+            
         }
     }
 }

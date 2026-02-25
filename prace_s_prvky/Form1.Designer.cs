@@ -32,7 +32,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.buttonDoit = new System.Windows.Forms.Button();
             this.textBox = new System.Windows.Forms.TextBox();
+            this.buttonhledat = new System.Windows.Forms.Button();
+            this.numericHledaneCislo = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numericPocet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericHledaneCislo)).BeginInit();
             this.SuspendLayout();
             // 
             // numericPocet
@@ -75,11 +78,41 @@
             this.textBox.TabIndex = 3;
             this.textBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
+            // buttonhledat
+            // 
+            this.buttonhledat.Location = new System.Drawing.Point(652, 203);
+            this.buttonhledat.Name = "buttonhledat";
+            this.buttonhledat.Size = new System.Drawing.Size(75, 23);
+            this.buttonhledat.TabIndex = 4;
+            this.buttonhledat.Text = "hledat";
+            this.buttonhledat.UseVisualStyleBackColor = true;
+            this.buttonhledat.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // numericHledaneCislo
+            // 
+            this.numericHledaneCislo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(238)));
+            this.numericHledaneCislo.Location = new System.Drawing.Point(521, 196);
+            this.numericHledaneCislo.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericHledaneCislo.Minimum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            -2147483648});
+            this.numericHledaneCislo.Name = "numericHledaneCislo";
+            this.numericHledaneCislo.Size = new System.Drawing.Size(120, 30);
+            this.numericHledaneCislo.TabIndex = 5;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.numericHledaneCislo);
+            this.Controls.Add(this.buttonhledat);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.buttonDoit);
             this.Controls.Add(this.label1);
@@ -87,6 +120,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.numericPocet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericHledaneCislo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -98,6 +132,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonDoit;
         private System.Windows.Forms.TextBox textBox;
+        private System.Windows.Forms.Button buttonhledat;
+        private System.Windows.Forms.NumericUpDown numericHledaneCislo;
     }
 }
 
